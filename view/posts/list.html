@@ -1,0 +1,18 @@
+{{template "header.html" .}}
+	{{range .Posts}}
+	<div class="blog-post">
+		<h2 class="blog-post-title">{{.Title}}</h2>
+		<p class="blog-post-meta">{{.Description}}</p>
+	    <a href= "/posts/{{.Key}}">Read more</a>
+	    <hr>
+	</div>
+	{{end}}
+	<ul class="pager">
+		{{if ge .PrevPage  0}}
+        	<li><a href="/posts/page/{{.PrevPage}}">Previous</a></li>
+        {{end}}
+        {{if ge .NextPage  0}}
+        	<li><a href="/posts/page/{{.NextPage}}">Next</a></li>
+        {{end}}
+  	</ul>
+{{template "footer.html" .}}

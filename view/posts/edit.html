@@ -1,0 +1,32 @@
+{{template "header.html" .}}
+	<form class="form-vertical" name="input" action="save" method="POST">
+		<fieldset>
+			<!-- Form Name -->
+			<legend>Add new post</legend>
+
+			<div class="control-group">
+			  <label class="control-label" for="title">Title</label>
+			  <div class="controls">                     
+			    <textarea id="title" name="title"  rows="1" cols="70">{{ .Title }}</textarea>
+			  </div>
+			</div>
+			<!-- Textarea -->
+			<div class="control-group">
+			  <label class="control-label" for="description">Description</label>
+			  <div class="controls">                     
+			    <textarea id="description" name="description"  rows="2" cols="70">{{ .Description }}</textarea>
+			  </div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  <label class="control-label" for="body">Body</label>
+			  <div class="controls">                     
+			    <textarea id="body" name="body"  rows="10" cols="70">{{ .Body }}</textarea>
+			  </div>
+			</div>
+			<input type="hidden" name="id" value={{ .Key }}>
+			<input type="submit" value="Submit" class="btn btn-success">
+		</fieldset>
+	</form> 
+{{template "footer.html" .}}

@@ -1,0 +1,6 @@
+{{template "header.html" .}}
+<div class="blog-post">
+          {{template "post.html" .}}
+	      <a href="edit/{{.Key}}">Edit</a> | <a href="delete/{{.Key}}">Delete</a>
+</div>
+{{template "footer.html" .}}

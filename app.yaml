@@ -1,0 +1,29 @@
+application: ivory-haven-637
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+- url: /public/css
+  static_dir: view/public/css
+- url: /public/fonts
+  static_dir: view/public/fonts
+- url: /public/js
+  static_dir: view/public/js
+- url: /posts/delete/.*
+  login: admin
+  script: _go_app
+- url: /posts/edit/save
+  login: admin
+  script: _go_app
+- url: /posts/edit/.*
+  login: admin
+  script: _go_app
+- url: /posts/save
+  login: admin
+  script: _go_app
+- url: /posts/add
+  login: admin
+  script: _go_app
+- url: /.*
+  script: _go_app
