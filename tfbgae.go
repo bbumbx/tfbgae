@@ -9,6 +9,7 @@ import (
 
 func init() {
     r := mux.NewRouter()
+    r.StrictSlash(true)
     r.HandleFunc("/", rootHandler)
     r.HandleFunc("/posts", InjectDb(List))
     r.HandleFunc("/posts/page/{page}", InjectDb(List))
